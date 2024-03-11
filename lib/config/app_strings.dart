@@ -1,5 +1,5 @@
 class AppStrings {
-  static const String appName = "Your App Name";
+  static const String appName = "CITY CHATT";
   static const String username = "Username";
   static const String password = "Password";
   static const String forgotPassword = "Forgot Password?";
@@ -18,5 +18,7 @@ class AppStrings {
   static const String female = "Female";
   static const String other = "Other";
   static const String nearby = "nearby";
+  static const String email = "email";
+
   static const String alreadyHaveAccount = "alreadyHaveAccount";
 }
