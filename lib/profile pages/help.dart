@@ -26,12 +26,12 @@ class HelpPage extends StatelessWidget {
             ),
             SizedBox(height: 20),
             Text(
-              "Email: support@example.com",
+              "Email: rackchat@gmail.com",
               style: AppText.body1,
             ),
             SizedBox(height: 10),
             Text(
-              "Phone: +1234567890",
+              "Phone: +254727177155",
               style: AppText.body1,
             ),
             SizedBox(height: 20),

@@ -34,7 +34,7 @@ class ProfilePage extends StatelessWidget {
               ),
               PopupMenuItem(
                 onTap: () {
-                  Navigator.of(context).pushNamed('/settings');
+                  Navigator.of(context).pushNamed(Approutes.settings);
                 },
                 child: Text("Settings"),
               ),

@@ -119,7 +119,10 @@ class LoginPage extends StatelessWidget {
                     style: TextStyle(color: Colors.white),
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context)
+                          .pushReplacementNamed(Approutes.signup);
+                    },
                     child: Text(
                       AppStrings.signup,
                       style: TextStyle(color: AppColors.amber),
