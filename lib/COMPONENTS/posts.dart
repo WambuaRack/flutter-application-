@@ -1,41 +1,37 @@
 import 'package:flutter/material.dart';
-import 'package:kitengela/styles/apptext.dart';
+import 'package:kitengela/COMPONENTS/postitem_model.dart';
 
-class PostItem extends StatelessWidget {
-  const PostItem({super.key});
+class PostsPage extends StatelessWidget {
+  final List<PostItemModel> posts;
+
+  const PostsPage({Key? key, required this.posts}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    MediaQuery.of(context).size;
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-      child: Column(children: [
-        Row(children: [
-          Image.asset(
-            'assets/temp/h.jpg',
-            width: 40,
-            height: 40,
-          ),
-          SizedBox(
-            width: 16,
-          ),
-          Text(
-            "MEERCY RACK",
-            style: AppText.subtitle3,
-          ),
-        ]),
-        SizedBox(
-          height: 12,
-        ),
-        Image.asset(
-          'assets/temp/v.jpg',
-          height: 800,
-        ),
-        Text(
-          "Do your best but don'lose yourself because in the morning time the sun will shine",
-          style: AppText.subtitle3,
-        ),
-      ]),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Posts'),
+      ),
+      body: ListView.builder(
+        itemCount: posts.length,
+        itemBuilder: (context, index) {
+          final post = posts[index];
+          return Padding(
+            padding:
+                const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+            child: Card(
+              elevation: 2,
+              child: ListTile(
+                title: Text(post.title ??
+                    ''), // Use null-aware operator to handle null title
+                subtitle: Text(post.content ??
+                    ''), // Use null-aware operator to handle null content
+                // You can add additional fields or widgets here as needed
+              ),
+            ),
+          );
+        },
+      ),
     );
   }
 }

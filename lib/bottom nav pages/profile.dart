@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:kitengela/COMPONENTS/toolbar.dart';
+import 'package:kitengela/COMPONENTS/user_model.dart';
 import 'package:kitengela/COMPONENTS/useravatar.dart';
 import 'package:kitengela/config/approutes.dart';
 import 'package:kitengela/styles/apptext.dart';
 
 class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
+  final User user; // Accept a User object
+
+  const ProfilePage({Key? key, required this.user}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,15 +27,17 @@ class ProfilePage extends StatelessWidget {
                 child: Text("Edit"),
               ),
               PopupMenuItem(
-                  onTap: () {
-                    Navigator.of(context).pushNamed('/logout');
-                  },
-                  child: Text("Log Out")),
+                onTap: () {
+                  Navigator.of(context).pushNamed('/logout');
+                },
+                child: Text("Log Out"),
+              ),
               PopupMenuItem(
-                  onTap: () {
-                    Navigator.of(context).pushNamed('/settings');
-                  },
-                  child: Text("settings"))
+                onTap: () {
+                  Navigator.of(context).pushNamed('/settings');
+                },
+                child: Text("Settings"),
+              ),
             ];
           })
         ],
@@ -41,19 +46,20 @@ class ProfilePage extends StatelessWidget {
         children: [
           UserAvatar(
             size: 90,
+            imageUrl: user.avatarUrl,
           ),
           SizedBox(
             height: 24,
           ),
           Text(
-            "WAMBUA SATYER",
+            user.name,
             style: AppText.header2,
           ),
           SizedBox(
             height: 24,
           ),
           Text(
-            "MIAMI",
+            user.username,
             style: AppText.subtitle3,
           ),
           SizedBox(
@@ -65,37 +71,37 @@ class ProfilePage extends StatelessWidget {
               Column(
                 children: [
                   Text(
-                    "4567",
+                    user.followersCount.toString(),
                     style: AppText.header2,
                   ),
-                  Text("Followers")
+                  Text("Followers"),
                 ],
               ),
               Column(
                 children: [
                   Text(
-                    "47",
+                    user.postsCount.toString(),
                     style: AppText.header2,
                   ),
-                  Text("Posts")
+                  Text("Posts"),
                 ],
               ),
               Column(
                 children: [
                   Text(
-                    "467",
+                    user.followingCount.toString(),
                     style: AppText.header2,
                   ),
-                  Text("Following")
+                  Text("Following"),
                 ],
-              )
+              ),
             ],
           ),
           Divider(
             thickness: 1,
             height: 24,
           ),
-          Text("ggdgdfgdfgdgg")
+          Text("Bio: Placeholder bio text"),
         ],
       ),
     );

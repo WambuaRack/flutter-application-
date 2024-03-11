@@ -3,8 +3,8 @@ import 'package:kitengela/config/app_strings.dart';
 import 'package:kitengela/config/approutes.dart';
 import 'package:kitengela/styles/appcolors.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key});
+class SignupPage extends StatelessWidget {
+  const SignupPage({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -47,81 +47,33 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 16),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  AppStrings.forgotPassword,
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-              SizedBox(height: 16),
               ElevatedButton(
                 onPressed: () {
+                  // Perform signup logic
+                  // After successful signup, navigate to the main page
                   Navigator.of(context).pushReplacementNamed(Approutes.main);
                 },
                 style: ElevatedButton.styleFrom(
                   primary: AppColors.primary,
                   onPrimary: AppColors.black,
                 ),
-                child: Text(AppStrings.login),
-              ),
-              SizedBox(height: 16),
-              Text(
-                AppStrings.orSignupWith,
-                style: TextStyle(color: Colors.white),
-              ),
-              SizedBox(height: 16),
-              ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.white,
-                  onPrimary: Colors.black,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      'assets/images/g.png',
-                      width: 20,
-                      height: 20,
-                    ),
-                    SizedBox(width: 8),
-                    Text(AppStrings.loginWithGoogle),
-                  ],
-                ),
-              ),
-              SizedBox(height: 16),
-              ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.white,
-                  onPrimary: Colors.black,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      'assets/images/fb.jpg',
-                      width: 22,
-                      height: 22,
-                    ),
-                    SizedBox(width: 8),
-                    Text(AppStrings.loginWithFacebook),
-                  ],
-                ),
+                child: Text(AppStrings.signup),
               ),
               SizedBox(height: 16),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    AppStrings.dontHaveAccount,
+                    AppStrings.alreadyHaveAccount,
                     style: TextStyle(color: Colors.white),
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      // Navigate to login page
+                      Navigator.of(context).pushReplacementNamed(Approutes.login);
+                    },
                     child: Text(
-                      AppStrings.signup,
+                      AppStrings.login,
                       style: TextStyle(color: AppColors.amber),
                     ),
                   ),

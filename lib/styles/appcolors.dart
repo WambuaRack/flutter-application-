@@ -10,4 +10,5 @@ class AppColors {
   static const background = Color(0xff2A2947);
   static const black = Color(0xff000000);
   static const white = Color(0xffffffff);
+  static const Color amber = Colors.amber; // Define the amber color
 }

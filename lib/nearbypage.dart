@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:kitengela/COMPONENTS/toolbar.dart';
-import 'package:kitengela/config/app%20strings.dart';
+import 'package:kitengela/config/app_strings.dart';
 import 'package:kitengela/styles/appcolors.dart';
 import 'package:latlong2/latlong.dart';
 
