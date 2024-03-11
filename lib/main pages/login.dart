@@ -81,9 +81,9 @@ class LoginPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
-                      'assets/images/g.png',
-                      width: 20,
-                      height: 20,
+                      'assets/images/fb.jpg',
+                      width: 22,
+                      height: 22,
                     ),
                     SizedBox(width: 8),
                     Text(AppStrings.loginWithGoogle),
