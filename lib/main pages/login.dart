@@ -75,10 +75,14 @@ class LoginPage extends StatelessWidget {
                   onPressed: () {
                     Navigator.of(context).pushReplacementNamed(Approutes.main);
                   },
-                  style: ElevatedButton.styleFrom(
-                    primary: AppColors.primary,
-                    onPrimary: AppColors.black,
-                    padding: EdgeInsets.symmetric(vertical: 16),
+                  style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(AppColors.primary),
+                    foregroundColor:
+                        MaterialStateProperty.all<Color>(AppColors.black),
+                    padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                      EdgeInsets.symmetric(vertical: 16),
+                    ),
                   ),
                   child: Text(
                     AppStrings.login,

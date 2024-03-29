@@ -4,7 +4,7 @@ import 'package:kitengela/config/approutes.dart';
 import 'package:kitengela/styles/appcolors.dart';
 
 class SignupPage extends StatelessWidget {
-  const SignupPage({Key? key});
+  const SignupPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +26,7 @@ class SignupPage extends StatelessWidget {
               children: [
                 SizedBox(height: 20),
                 TextField(
-                  style:
-                      TextStyle(color: Colors.black), // Set text color to black
+                  style: TextStyle(color: Colors.black),
                   decoration: InputDecoration(
                     hintText: AppStrings.username,
                     border: OutlineInputBorder(
@@ -40,8 +39,7 @@ class SignupPage extends StatelessWidget {
                 ),
                 SizedBox(height: 10),
                 TextField(
-                  style:
-                      TextStyle(color: Colors.black), // Set text color to black
+                  style: TextStyle(color: Colors.black),
                   decoration: InputDecoration(
                     hintText: AppStrings.email,
                     border: OutlineInputBorder(
@@ -54,8 +52,7 @@ class SignupPage extends StatelessWidget {
                 ),
                 SizedBox(height: 10),
                 TextField(
-                  style:
-                      TextStyle(color: Colors.black), // Set text color to black
+                  style: TextStyle(color: Colors.black),
                   obscureText: true,
                   decoration: InputDecoration(
                     hintText: AppStrings.password,
@@ -74,9 +71,11 @@ class SignupPage extends StatelessWidget {
                     // After successful signup, navigate to the main page
                     Navigator.of(context).pushReplacementNamed(Approutes.main);
                   },
-                  style: ElevatedButton.styleFrom(
-                    primary: AppColors.primary,
-                    onPrimary: AppColors.black,
+                  style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(AppColors.primary),
+                    foregroundColor:
+                        MaterialStateProperty.all<Color>(AppColors.black),
                   ),
                   child: Text(AppStrings.signup),
                 ),
